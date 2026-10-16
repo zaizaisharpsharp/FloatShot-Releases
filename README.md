@@ -4,7 +4,7 @@ Official **public binary releases** for FloatShot, the Windows screenshot app. S
 
 ## Latest available
 
-**v0.7.4** — published October 16, 2026.
+**v0.7.6** — published October 16, 2026.
 
 [Download the latest Windows ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest)
 
@@ -15,7 +15,7 @@ For an already installed FloatShot with the new release channel configured:
 1. Right-click the FloatShot icon in the Windows system tray.
 2. Open **Updates → Check for Updates...**
 3. The app shows the installed version and latest version.
-4. Click **Update Now** when a newer version is available. FloatShot downloads the binary release, checks SHA-256 integrity, installs the update and restarts when screenshot/editor windows are closed.
+4. Click **Download Update** when a newer version is available. FloatShot downloads it and verifies the SHA-256 checksum without closing.\n5. Click **Install & Restart** and confirm the prompt. FloatShot closes, installs the verified update and reopens. Floating screenshots and editors must be closed before installation.
 
 The app checks `https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest/download/floatshot-update.json` automatically; there is no GitHub repository setting in its UI.
 
@@ -27,4 +27,4 @@ The private source repository's Windows GitHub Actions workflow compiles the app
 
 The token currently expires **January 14, 2027**, and must be renewed to keep future publishing automated. Existing published downloads will remain available.
 
-**Validation:** Both v0.7.3 and v0.7.4 passed Windows build and artifact integrity checks. Actual in-app Windows update installation and restart require one live client test.
+**Validation:** Versions v0.7.3 through v0.7.6 passed Windows compilation, packaging and integrity checks. The new opt-in install flow and bottom-up screenshot shelf are in v0.7.6; actual Windows UI and restart behavior require a live client test.
