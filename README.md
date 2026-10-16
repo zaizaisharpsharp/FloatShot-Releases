@@ -1,30 +1,38 @@
-# FloatShot Releases
+# FloatShot for Windows
 
-Official **public binary releases** for FloatShot, the Windows screenshot app. Source code remains in the private `zaizaisharpsharp/FloatShot-Windows` repository.
+Official public downloads for **FloatShot**. Source code is kept private in `zaizaisharpsharp/FloatShot-Windows`.
 
-## Latest available
+## Install FloatShot
 
-**v0.7.9** — published October 16, 2026.
+**Latest version: v0.8.0** (October 16, 2026)
 
-[Download the latest Windows ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest)
+**[Download FloatShot-Setup.exe](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest/download/FloatShot-Setup.exe)**
 
-## Updating FloatShot
+Download the single setup EXE and double-click it. The modern Windows installer:
 
-For an already installed FloatShot with the new release channel configured:
+- installs the self-contained app for the current Windows account without administrator rights;
+- adds a Start menu shortcut and Windows **Settings → Installed apps → FloatShot** uninstall entry;
+- offers a desktop shortcut and start-at-login option;
+- launches FloatShot after setup.
 
-1. Right-click the FloatShot icon in the Windows system tray.
-2. Open **Updates → Check for Updates...**
-3. The app shows the installed version and latest version.
-4. Click **Download Update** when a newer version is available. FloatShot downloads it and verifies the SHA-256 checksum without closing.\n5. The verified update is presented as a single **Ready to install** confirmation screen. Choose **Restart & Install**, or **Not now** to keep FloatShot open. The app closes, installs the verified update and reopens only after your click. Floating screenshots and editors must be closed before installation.
+No source ZIP, .NET SDK or build script is needed. Settings and screenshots survive upgrades or uninstalling. This setup is currently **unsigned**, so Windows SmartScreen may warn that it has an unknown publisher. Verify that you downloaded it from this official release repository.
 
-The app checks `https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest/download/floatshot-update.json` automatically; there is no GitHub repository setting in its UI.
+## Update an existing installation
 
-Releases include `FloatShot-win-x64.zip` and `floatshot-update.json`. The ZIP is not itself a one-click installer. New installations should use the project's one-time Windows installer, which sets the installed-app marker, startup shortcut, and update target.
+If FloatShot is already installed, you do **not** need to run the installer again.
 
-## Release security
+Right-click FloatShot in the Windows notification area, choose **Check for Updates**, then **Download Update** and **Restart & Install** when ready. FloatShot checks the public release manifest and verifies the package SHA-256 digest before installing.
 
-The private source repository's Windows GitHub Actions workflow compiles the app, verifies the executable version, checks the archive, creates a SHA-256 manifest, then publishes. The release token is stored in GitHub Actions secrets and scoped to this public repository.
+Each release includes:
 
-The token currently expires **January 14, 2027**, and must be renewed to keep future publishing automated. Existing published downloads will remain available.
+- `FloatShot-Setup.exe`: standalone Windows setup for new installs and reinstalls.
+- `FloatShot-win-x64.zip`: internal app files consumed by the in-app updater.
+- `floatshot-update.json`: versioned update manifest containing the ZIP URL and SHA-256 checksum.
 
-**Validation:** Versions v0.7.3 through v0.7.9 passed Windows compilation, packaging and integrity checks. v0.7.9 adds the first-party tray menu and tabbed Windows Settings window with working capture, export, shortcut, shelf and annotation preferences. Video recording, OCR and cloud upload remain visibly unavailable, rather than simulated.
+The updater reads `https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest/download/floatshot-update.json`.
+
+## Build verification
+
+The private repository's GitHub Actions workflow builds the self-contained Windows x64 application, creates the installer with Inno Setup 6, runs the installer on a clean Windows runner and verifies the installed executable, update marker, Start menu shortcut and Windows uninstall registration. It also validates the ZIP and manifest. The **v0.8.0** workflow completed successfully. Full interactive GUI behavior still needs desktop validation.
+
+The publishing credential in GitHub Actions is scoped to this public release repository and expires January 14, 2027. It must be renewed for future automated publication.
