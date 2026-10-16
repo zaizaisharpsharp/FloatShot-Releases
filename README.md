@@ -4,7 +4,7 @@ Official **public binary releases** for FloatShot, the Windows screenshot app. S
 
 ## Latest available
 
-**v0.7.8** — published October 16, 2026.
+**v0.7.9** — published October 16, 2026.
 
 [Download the latest Windows ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest)
 
@@ -27,4 +27,4 @@ The private source repository's Windows GitHub Actions workflow compiles the app
 
 The token currently expires **January 14, 2027**, and must be renewed to keep future publishing automated. Existing published downloads will remain available.
 
-**Validation:** Versions v0.7.3 through v0.7.8 passed Windows compilation, packaging and integrity checks. v0.7.8 adds ambient depth behind square screenshot cards and draggable previews without a bitmap blur on the screenshot itself. The update dialog stays the same size throughout checking/downloading/verification, includes a download progress indicator, and avoids duplicate restart confirmation prompts. Actual Windows visual and in-app update interaction requires a live client test.
+**Validation:** Versions v0.7.3 through v0.7.9 passed Windows compilation, packaging and integrity checks. v0.7.9 adds the first-party tray menu and tabbed Windows Settings window with working capture, export, shortcut, shelf and annotation preferences. Video recording, OCR and cloud upload remain visibly unavailable, rather than simulated.
