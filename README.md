@@ -4,7 +4,7 @@ Official **public binary releases** for FloatShot, the Windows screenshot app. S
 
 ## Latest available
 
-**v0.7.7** — published October 16, 2026.
+**v0.7.8** — published October 16, 2026.
 
 [Download the latest Windows ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest)
 
@@ -15,7 +15,7 @@ For an already installed FloatShot with the new release channel configured:
 1. Right-click the FloatShot icon in the Windows system tray.
 2. Open **Updates → Check for Updates...**
 3. The app shows the installed version and latest version.
-4. Click **Download Update** when a newer version is available. FloatShot downloads it and verifies the SHA-256 checksum without closing.\n5. Click **Install & Restart** and confirm the prompt. FloatShot closes, installs the verified update and reopens. Floating screenshots and editors must be closed before installation.
+4. Click **Download Update** when a newer version is available. FloatShot downloads it and verifies the SHA-256 checksum without closing.\n5. The verified update is presented as a single **Ready to install** confirmation screen. Choose **Restart & Install**, or **Not now** to keep FloatShot open. The app closes, installs the verified update and reopens only after your click. Floating screenshots and editors must be closed before installation.
 
 The app checks `https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest/download/floatshot-update.json` automatically; there is no GitHub repository setting in its UI.
 
@@ -27,4 +27,4 @@ The private source repository's Windows GitHub Actions workflow compiles the app
 
 The token currently expires **January 14, 2027**, and must be renewed to keep future publishing automated. Existing published downloads will remain available.
 
-**Validation:** Versions v0.7.3 through v0.7.7 passed Windows compilation, packaging and integrity checks. v0.7.7 adds fixed square preview cards and a transparent live-desktop area selection layer that avoids displaying a stretched desktop bitmap during capture. Screenshot previews are content-aware crops; saved, copied and dragged images retain full resolution. Actual Windows interaction still requires a live client test.
+**Validation:** Versions v0.7.3 through v0.7.8 passed Windows compilation, packaging and integrity checks. v0.7.8 adds ambient depth behind square screenshot cards and draggable previews without a bitmap blur on the screenshot itself. The update dialog stays the same size throughout checking/downloading/verification, includes a download progress indicator, and avoids duplicate restart confirmation prompts. Actual Windows visual and in-app update interaction requires a live client test.
