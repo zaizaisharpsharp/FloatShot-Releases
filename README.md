@@ -2,11 +2,24 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.9.0**
+**Latest stable release: v0.9.1**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.9.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.9.1/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.9.1
+
+**Smart subwindow capture**, based on feedback that previous versions could highlight only entire app windows:
+
+- **Hover over an accessible control, navigation item, sidebar, or section:** The selection outline changes to the smaller UI region rather than always covering the entire browser or app.
+- **Click** to capture the highlighted area, without taking a screenshot of the whole containing window.
+- **Tab** steps through larger enclosing regions and **Shift+Tab** moves inward. Press **Space** to toggle complete-window selection; **Enter** to capture; **Esc** to cancel.
+- **Drag** to capture any exact rectangle manually, including content that doesn't expose accessibility boundaries.
+- **Background detection:** Accessibility inspection runs off the user-interface thread; the selection rectangle and cursor remain responsive.
+- **Target-specific Windows regression:** The CI test constructs two distinct navigation controls and verifies the selector detects subregions at each position, rather than returning only the whole parent window. The installer and updater integrity tests also passed.
+
+This is a Windows accessibility-based best-effort feature, not a claim that every custom-drawn webpage exposes UI-element bounds. Chrome/Edge and desktop apps usually support UI Automation, but custom canvases, games and protected windows may need manual drag. While the picker is active, the underlying site may not receive new hover-triggered mouse events.
 
 ## What's new in v0.9.0
 
@@ -78,7 +91,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.9.0 public release passed the full Windows pipeline:
+The v0.9.1 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
@@ -86,7 +99,7 @@ The v0.9.0 public release passed the full Windows pipeline:
 - Inno Setup EXE compilation, silent Windows installation, executable/marker/Start-menu verification and Windows uninstall registration checks.
 - Version validation, ZIP integrity, and SHA-256 update-manifest checks.
 
-[**View the successful v0.9.0 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39002635323) (private source repository; requires authorized access).
+[**View the successful v0.9.1 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39004173767) (private source repository; requires authorized access).
 
 Automated tests don't replace visual testing on every monitor or third-party app. Capture behavior with protected or hardware-accelerated windows can vary due to Windows limitations.
 
