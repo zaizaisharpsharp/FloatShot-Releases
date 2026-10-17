@@ -4,7 +4,7 @@ Official public downloads for **FloatShot**. Source code is kept private in `zai
 
 ## Install FloatShot
 
-**Latest version: v0.8.4** (October 16, 2026)
+**Latest version: v0.8.5** (October 16, 2026)
 
 **[Download FloatShot-Setup.exe](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest/download/FloatShot-Setup.exe)**
 
@@ -74,3 +74,8 @@ The private Windows CI workflow successfully built and installed v0.8.4, generat
 To open FloatShot: click the **^** arrow next to the Windows clock, find the FloatShot icon, and right-click to open its menu. To keep it visible, drag it from the popup onto the taskbar notification area. Apps cannot force their own icon into Windows' always-visible notification set.
 
 For future updates: open FloatShot → **Check for Updates** → **Download Update** → **Restart & Install**. You only need the setup EXE for the first installation, a clean reinstall, or to repair a broken existing installation.
+
+
+## v0.8.5: Fixed right-edge tray menu
+
+FloatShot now opens its notification-area popup at the **far right of the active monitor's taskbar work area**, with a consistent edge gap, regardless of the mouse cursor's position. The menu's last item is **Quit**. Windows CI now verifies actual right-edge placement when the WPF menu is shown, plus its existing menu command, capture, EXE installer and update integrity tests. Already-installed users can update through **Check for Updates**; first-time users can download `FloatShot-Setup.exe`.
