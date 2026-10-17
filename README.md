@@ -2,11 +2,25 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.10.0**
+**Latest stable release: v0.11.0**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.10.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.11.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.11.0
+
+**Window targeting and three native capture workflows.** This version adds built-in local text recognition, a scrolling screenshot workflow, and MP4 recording, alongside stronger visible-window selection.
+
+- **Smarter Window Capture:** Ignores minimized, cloaked, off-screen, and stale controls. Uses pixels currently visible on-screen instead of attempting to capture hidden internal window surfaces. Hover to select an accessible item, use Tab/Space to change target level, or drag an exact region.
+- **Capture Text (OCR):** Select a region and recognize English text locally. Correct the extracted text, copy it, or save a `.txt` file. No cloud upload is required.
+- **Scrolling Capture:** Select a content area, let FloatShot scroll and match overlapping image strips, and save a tall screenshot. The stitcher stops when it cannot safely align the content rather than insert fabricated image rows.
+- **Record Screen:** Records a **silent whole-monitor MP4** from the monitor under the cursor with a floating Stop control. Files are saved locally under `FloatShot Captures/Recordings`. **Region-cropped recording and microphone/system audio are not yet supported.**
+- **Validation:** Windows build, real OCR recognition, a short MP4 recording, scroll-stitch pixel comparisons, installer installation, update ZIP, and SHA-256 integrity checks passed.
+
+**Compatibility note:** Capture targets vary by app and display configuration. Some custom UI, protected applications, animated pages, and virtualized scrolling lists may require manual area capture. Windows Graphics Capture support and video encoding capability are required for recording. The release has passed automated Windows tests; interactive behavior across individual PCs still needs real-device confirmation.
+
+[**View successful v0.11.0 Windows release build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39007635459)
 
 ## What's new in v0.10.0
 
