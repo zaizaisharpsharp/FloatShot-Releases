@@ -2,11 +2,25 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.9.1**
+**Latest stable release: v0.10.0**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.9.1/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.10.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.10.0
+
+**Professional screenshot editor overhaul:** The editor has been rebuilt to correct lost annotations and stretched shapes. It now stores markup as editable objects until export and renders the final image at the source screenshot's exact resolution.
+
+- **Done really applies your work.** It saves the actual flattened edited image and updates the existing floating screenshot preview to the new version. The unedited original stays untouched as a backup.
+- **Redaction and shapes no longer distort the screenshot.** Solid redaction exports fully opaque black pixels. Circles, rectangles, arrows, pen strokes and highlights are rendered independently of display zoom.
+- **Move, resize, restyle.** Select an annotation, drag it, use the eight resize handles, change its color (including a custom color), adjust stroke thickness, nudge with arrow keys, or Delete. Ctrl+Z/Ctrl+Y support Undo/Redo.
+- **Text formatting.** Add text, double-click to edit it, drag to reposition, resize the text box, choose fonts, font size, text color and bold.
+- **Modern editor commands.** Compact annotation tools, Save as..., Done, Copy, Pin, Quick Access, Drag Me and Fit/50–200% zoom. Zoom changes the editor preview, not export dimensions.
+- **Combine 2–4 images.** Choose Combine in the editor, select up to three more images, reorder them, and arrange into a two-column grid, horizontal row or vertical stack. Change gaps, padding and light/dark background. Proportions are preserved, and the combined result opens for further annotation.
+- **Regression tests expanded.** Windows CI checks exported redaction pixels, moved redaction, ellipse colors, text content and movement, Undo/Redo, four-tile grid placement and whether Done actually replaces the original floating card. It also tests Windows UI startup, installer registration and updater ZIP/checksum integrity.
+
+**Note:** Editor markup remains editable while the window is open. Saving a PNG/JPEG flattens it, and there is not yet a separate persistent editable project format. Windows CI validates functionality but cannot replace hands-on mouse and visual tests across every DPI/display configuration.
 
 ## What's new in v0.9.1
 
@@ -91,7 +105,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.9.1 public release passed the full Windows pipeline:
+The v0.10.0 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
@@ -99,7 +113,7 @@ The v0.9.1 public release passed the full Windows pipeline:
 - Inno Setup EXE compilation, silent Windows installation, executable/marker/Start-menu verification and Windows uninstall registration checks.
 - Version validation, ZIP integrity, and SHA-256 update-manifest checks.
 
-[**View the successful v0.9.1 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39004173767) (private source repository; requires authorized access).
+[**View the successful v0.10.0 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39005568728) (private source repository; requires authorized access).
 
 Automated tests don't replace visual testing on every monitor or third-party app. Capture behavior with protected or hardware-accelerated windows can vary due to Windows limitations.
 
