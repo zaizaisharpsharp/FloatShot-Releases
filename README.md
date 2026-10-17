@@ -4,7 +4,7 @@ Official public downloads for **FloatShot**. Source code is kept private in `zai
 
 ## Install FloatShot
 
-**Latest version: v0.8.1** (October 16, 2026)
+**Latest version: v0.8.2** (October 16, 2026)
 
 **[Download FloatShot-Setup.exe](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/latest/download/FloatShot-Setup.exe)**
 
@@ -33,7 +33,7 @@ The updater reads `https://github.com/zaizaisharpsharp/FloatShot-Releases/releas
 
 ## Build verification
 
-The private repository's GitHub Actions workflow builds the self-contained Windows x64 application, creates the installer with Inno Setup 6, runs the installer on a clean Windows runner and verifies the installed executable, update marker, Start menu shortcut and Windows uninstall registration. It also validates the ZIP and manifest. The **v0.8.1** workflow completed successfully. Full interactive GUI behavior still needs desktop validation.
+The private repository's GitHub Actions workflow builds the self-contained Windows x64 application, creates the installer with Inno Setup 6, runs the installer on a clean Windows runner and verifies the installed executable, update marker, Start menu shortcut and Windows uninstall registration. It also validates the ZIP and manifest. The **v0.8.2** workflow completed successfully. Full interactive GUI behavior still needs desktop validation.
 
 The publishing credential in GitHub Actions is scoped to this public release repository and expires January 14, 2027. It must be renewed for future automated publication.
 
@@ -45,3 +45,12 @@ The publishing credential in GitHub Actions is scoped to this public release rep
 Supported functions now show original two-step **first-use help guides** with a Got it button. Once acknowledged, the guide won't interrupt that tool again. Reopen any guide from **Help & Tips** in the tray menu or **Settings → About**.
 
 Current users can install v0.8.1 through FloatShot's **Check for Updates → Download Update → Restart & Install** without downloading the setup EXE. The GitHub Actions workflow compiled v0.8.1, installed the EXE on a Windows runner and verified the ZIP, manifest and public release. Live interface behavior still requires testing on a Windows desktop.
+
+
+## v0.8.2: Stability and compact tray menu
+
+This release corrects the tray-menu command lifecycle. Choosing an action hides the menu first, allows the mouse event to finish, and safely closes the menu and dispatches the action. Errors no longer silently terminate the app for ordinary recoverable WPF failures; diagnostics are stored at `%LOCALAPPDATA%\\FloatShot\\logs\\diagnostics.log`.
+
+The menu is narrower, shorter, with more compact rows and typography. The Windows release workflow now tests the menu dispatch path plus Settings, About, History, and All-In-One WPF window creation, in addition to installing and verifying the setup EXE.
+
+**If an older FloatShot crashes when you use its menu:** close it from Task Manager if still running and download and run the latest `FloatShot-Setup.exe` **over the existing installation**. No need to uninstall or remove saved screenshots. Future updates remain available in-app.
