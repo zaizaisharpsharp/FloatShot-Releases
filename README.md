@@ -2,11 +2,27 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.12.1**
+**Latest stable release: v0.12.2**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.1/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.2/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.12.2
+
+**A compact, bottom-center recording dock and an unsaved floating video preview.**
+
+- **Manual recording start:** Select the screen region, then click Start when you're ready. FloatShot no longer begins recording before you press Start.
+- **Compact controls:** A bottom-centered, draggable icon dock provides Start, Pause/Resume, Stop, Discard, and Close, with hover tooltips instead of wide text buttons.
+- **Screenshot-style video preview:** Stop finalizes a recoverable, temporary MP4 and opens a floating thumbnail. The recording isn't automatically added to the saved library.
+- **Hover to act:** Play the clip in your default Windows video player, Save As, Done to save, or Discard it. Closing an unsaved preview asks for confirmation.
+- **Crash and update recovery:** Finished but unsaved MP4 drafts remain recoverable from Settings → Recording until explicitly saved or deleted. Update preparation preserves the drafts.
+- **All-in-One toolbar repair:** Capture mode buttons receive clicks reliably instead of being intercepted by the selection crosshair.
+- **Regression coverage:** Windows tests checked the recording dock's idle-before-Start state, actual MP4 capture with Pause/Resume, video draft preservation and save, WPF interaction, screenshot tools, installation and update integrity.
+
+**Note:** Recording audio is not implemented yet. Automated tests pass, but different display scaling, graphics drivers and individual apps still require testing on the user's PC.
+
+[**Successful v0.12.2 Windows release build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39018500548)
 
 ## What's new in v0.12.1
 
@@ -177,7 +193,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.12.1 public release passed the full Windows pipeline:
+The v0.12.2 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
