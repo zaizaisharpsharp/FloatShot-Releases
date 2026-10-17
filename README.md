@@ -2,11 +2,22 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.8.9**
+**Latest stable release: v0.9.0**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.8.9/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.9.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.9.0
+
+- **Window targeting with a live camera badge:** Choose Capture Window or press **Ctrl+Shift+4**, move the pointer over the window you want, and click the highlighted window to capture. Esc cancels. This replaces the old delayed foreground-window guess.
+- **All-In-One immediately shows an editable crop:** The screen dims around a clear preselected rectangle with eight grab handles. Move the area by dragging inside; resize at a handle/edge; drag outside to start a new selection. Press Enter or click Capture area to finish, Esc to cancel. Fullscreen, Window and Timer modes remain available from its compact dock.
+- **Choose what double-clicking a floating thumbnail does:** In **Settings → Quick Access → Double-click**, choose **Save + Windows viewer**, **Windows viewer (temporary)**, or **Open FloatShot editor**. The pencil continues to open the editor regardless of that setting.
+- **Refined annotation workspace:** More compact icon tools for pen, highlighter, redaction, shapes, arrows and text. **Save as...** chooses a filename/location, and **Done** saves an edited copy to the configured capture folder.
+- **Zoom and sharing from the editor:** **Fit**, 50%, 67%, 100%, 125%, 150% and 200% zoom are display-only; exported screenshots remain at original pixel size. The bottom bar offers Copy, Pin, Quick Access, and **Drag Me** for dragging the edited screenshot as a real file into another application.
+- **Windows regression checks:** The updated CI smoke checks that All-In-One opens with a real adjustable crop, that the editor route works from Quick Access, and that the existing shelf, tray, window capture, installer and update integrity tests continue to pass.
+
+**Not yet available:** CleanShot-style scrolling capture, OCR, full video/audio recording, editable project files, and background templates. FloatShot does not claim these are working.
 
 ## What's new in v0.8.9
 
@@ -57,7 +68,7 @@ For floating captures:
 
 When the shelf is full for the current screen and thumbnail size, the oldest card is automatically saved and retired to make room. You can use **Settings → Quick Access** to choose a smaller size or tighter spacing.
 
-**Capture History** shows your saved screenshots with lighter previews, Open, Copy, Edit, Pin and Delete. Press **Ctrl+F** to search filenames. **Settings → About → View FloatShot release information** opens this page for feature descriptions, build verification and help.
+**Capture History** shows your saved screenshots with lighter previews, Open, Copy, Edit, Pin and Delete. **Settings → Quick Access → Double-click** can now route the preview to the FloatShot annotation editor instead of the default Windows viewer. Press **Ctrl+F** to search filenames. **Settings → About → View FloatShot release information** opens this page for feature descriptions, build verification and help.
 
 ## How updates work
 
@@ -67,7 +78,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.8.9 public release passed the full Windows pipeline:
+The v0.9.0 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
@@ -75,7 +86,7 @@ The v0.8.9 public release passed the full Windows pipeline:
 - Inno Setup EXE compilation, silent Windows installation, executable/marker/Start-menu verification and Windows uninstall registration checks.
 - Version validation, ZIP integrity, and SHA-256 update-manifest checks.
 
-[**View the successful v0.8.9 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39001510754) (private source repository; requires authorized access).
+[**View the successful v0.9.0 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39002635323) (private source repository; requires authorized access).
 
 Automated tests don't replace visual testing on every monitor or third-party app. Capture behavior with protected or hardware-accelerated windows can vary due to Windows limitations.
 
