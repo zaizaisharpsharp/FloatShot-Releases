@@ -2,11 +2,26 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.11.1**
+**Latest stable release: v0.11.2**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.11.1/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.11.2/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.11.2
+
+**Reliable updates and a new What's New experience.** This release repairs a stuck Restart & Install flow and shows a compact list of improvements before the user downloads an update.
+
+- **Updater no longer freezes behind floating cards:** Already-captured screenshot cards are safely saved to the capture folder and dismissed before restarting, while unfinished edits and recordings remain protected.
+- **Check Again and retry now work:** A verified download no longer blocks checking the official channel, and a newer version can replace an older staged download.
+- **Recover interrupted updates:** Verified staged downloads are remembered across app restarts. If replacement fails, the updater records the failure, restores the previous installed version where possible, and offers another attempt.
+- **New release highlights:** The Updates window displays scrollable version-specific What's New bullets and a link to full release notes, using the new release manifest metadata.
+- **Installer safety and diagnostics:** Transactional file replacement, a retained backup, restart checks, and logged errors.
+- **Tested on Windows:** The build exercised updater view state, filesystem rollback, saved screenshot preservation, WPF editor/capture regression tests, silent installer installation, and SHA-256 integrity of the update ZIP.
+
+**For users whose previous updater is stuck:** Install v0.11.2 once using the installer link above. After that, future versions can use the revised update process. Saved screenshots and app settings are retained by the per-user installer. Automated tests cannot guarantee every machine-specific startup/antivirus interaction, so any failed attempt will be logged.
+
+[**View the successful v0.11.2 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39009886285)
 
 ## What's new in v0.11.1
 
@@ -131,7 +146,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.11.1 public release passed the full Windows pipeline:
+The v0.11.2 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
