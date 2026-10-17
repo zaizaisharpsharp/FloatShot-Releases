@@ -2,11 +2,30 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.12.4**
+**Latest stable release: v0.12.5**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.4/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.5/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.12.5
+
+**Sharper recordings and original-pixel screenshot fidelity.**
+
+- PNG screenshots preserve the captured resolution, with pixel-for-pixel save/reopen regression checks.
+- The image editor and scrolling preview map original pixels to screen pixels at 100% zoom, including on high-DPI Windows displays.
+- Opening an image and selecting Done without adding edits preserves the original bitmap.
+- High-quality H.264 screen recording now uses 30 FPS and sharper encoding without resizing the selected region.
+- Added an optional Lossless RGB mode for maximum color fidelity, with larger files and possible player compatibility limitations.
+- Recording settings now offer High, Balanced, and Lossless quality with 30 or 60 FPS options.
+- JPEG remains an optional lossy export for smaller files; PNG is recommended for exact screenshots.
+- Expanded Windows tests for source-to-export PNG pixels and lossless MP4 frame decoding.
+
+The visible, adjustable recording frame, manual Start, compact recording dock, hover-only video thumbnail actions, smaller discard dialog, dark-theme controls, and BETA indicators from v0.12.3 and v0.12.4 remain included.
+
+**Verified:** Windows application tests, installed app checks, live staged updater replacement and restart, ZIP integrity, and public release publication. Region video and scrolling capture remain BETA and require real-device testing across different Windows display and browser configurations.
+
+[**Successful v0.12.5 Windows release build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39058933998)
 
 ## What's new in v0.12.4
 
@@ -218,7 +237,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.12.4 public release passed the full Windows pipeline:
+The v0.12.5 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
