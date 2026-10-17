@@ -2,11 +2,36 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.12.2**
+**Latest stable release: v0.12.4**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.2/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.4/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.12.4
+
+**More reliable scrolling screenshots and clearer dark-theme controls.**
+
+- Scrolling capture now reads only the selected rectangle rather than continually copying every connected monitor.
+- Better overlap validation rejects stationary frames and blank or low-detail regions that could produce unreliable stitching.
+- Added Windows tests for blank-page alignment and unchanged frames, alongside the existing scrolling pixel-continuity checks.
+- Improved disabled-button contrast in the compact recording and scrolling controls.
+- Screen Recording and Scrolling Capture remain **BETA** while broader real-device compatibility is being tested.
+
+[**Verified v0.12.4 Windows release build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39055843616)
+
+## What's new in v0.12.3
+
+**Recording-area selection and UI refinement.**
+
+- The selected video region stays outlined, with draggable controls to move or resize it before recording begins.
+- The compact recorder stays near the bottom center, with high-contrast controls and a BETA label.
+- Finished videos appear in a floating preview with hover actions for Play, Save As, Done and Discard.
+- The discard confirmation is smaller and opens near the top center.
+- Scrolling Capture BETA uses consistent dark controls and opens long captures in a scrollable preview.
+- Refined update confirmation and other action controls for better visibility.
+
+[**Verified v0.12.3 Windows release build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39049428794)
 
 ## What's new in v0.12.2
 
@@ -193,7 +218,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.12.2 public release passed the full Windows pipeline:
+The v0.12.4 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
