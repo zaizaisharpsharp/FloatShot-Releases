@@ -2,11 +2,26 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.12.0**
+**Latest stable release: v0.12.1**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.1/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.12.1
+
+**Recording close confirmation and reliable in-app updates.**
+
+- **Polished unsaved-recording warning:** Closing or deleting an unfinished recording displays a modern rounded confirmation with the FloatShot icon, **Cancel**, **Close**, and a compact **Don't ask for confirmation** checkbox.
+- **Cancel really preserves your video:** Cancel and Escape leave the recording untouched. Choosing Close discards the unfinished recording. The Don't ask preference is remembered only when the user confirms Close.
+- **Reversible warning preference:** Settings → Recording lets you turn discard confirmation back on whenever you want.
+- **Fixed greyed-out Download Update:** FloatShot now detects the location of the physical installed EXE, not .NET's single-file extraction cache, and always provides an active update action when a newer version is available.
+- **Installed and portable modes:** Installed copies offer Download Update, and portable copies offer Get Installer, rather than an unusable grey button.
+- **Verified full update sequence:** GitHub's Windows runner tested download streaming, checksum validation, safe extraction, an actual staged update replacing the installed app, the old-version backup, successful restart, the installer and update ZIP.
+
+**Upgrading from an older version:** Existing v0.12.0 copies may still misidentify their installation and show Get Installer. If so, install v0.12.1 from the link above once. After that, the corrected updater should handle future versions normally.
+
+[**Successful v0.12.1 Windows build and in-app update test**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39014946662)
 
 ## What's new in v0.12.0
 
@@ -162,7 +177,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.12.0 public release passed the full Windows pipeline:
+The v0.12.1 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
