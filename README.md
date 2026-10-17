@@ -2,11 +2,27 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.11.2**
+**Latest stable release: v0.12.0**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.11.2/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.12.0
+
+**Region video recording, floating video thumbnails, improved scrolling capture, and a high-contrast selection cursor.**
+
+- **Capture a video region:** Choose Record Screen, drag an area within one monitor, and record only that selection.
+- **Recording controls:** Pause, Resume, Stop & Preview, and Delete are available during recording. Video is exported to local H.264 MP4 using a bundled, verified encoder.
+- **Video Quick Access:** A floating thumbnail appears after stopping, with an actual recorded video frame and Play, Save As, Done, and Delete.
+- **Scrolling screenshots:** After selecting content, choose Manual Scroll or Auto-scroll. Finish assembles aligned sections, while Cancel discards them; a single unscrolled image is not saved as a scrolling capture.
+- **Better visibility:** The selection cursor has white and black contrast so it can be seen against bright and dark backgrounds.
+- **Update recovery:** Portable or nonstandard installations now show an active Get Installer button rather than a disabled Download Update button.
+- **Verification:** Windows interaction tests, an actual region recording with Pause/Resume, playable MP4 validation, thumbnail frame extraction, installer installation, updater package and checksum checks all passed.
+
+**Current limitations:** Video recording does not yet include microphone or system sound. Scrolling capture may require Manual mode and smaller steps for animated, sticky-header, or virtualized content. Automated Windows tests passed, but physical mouse interactions and scrolling reliability on each device still require confirmation.
+
+[**View the successful v0.12.0 Windows release build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39013328692)
 
 ## What's new in v0.11.2
 
@@ -146,7 +162,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.11.2 public release passed the full Windows pipeline:
+The v0.12.0 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
@@ -167,6 +183,6 @@ If you selected **Hide FloatShot Tray Icon**, reopen FloatShot from Windows Star
 
 If Windows still shows an old taskbar icon after the new version is installed, unpin the old shortcut and pin FloatShot again from the Start menu. Windows may cache pinned shortcut icons.
 
-FloatShot does not currently include cloud upload, video recording with microphone/system audio, or cropped-region MP4 recording. v0.11.0 introduced local English OCR, conservative scrolling screenshots and silent whole-monitor MP4 capture; these features depend on Windows and target-app support.
+FloatShot does not currently include cloud upload or video recording with microphone/system audio. v0.12.0 supports silent cropped-region MP4 recording, local English OCR, and manual/automatic scrolling screenshots; supported behavior depends on Windows and target-app capabilities.
 
 **Installation note:** This setup EXE is not yet code signed. Windows SmartScreen may show an *Unknown publisher* warning; download only from this official repository.
