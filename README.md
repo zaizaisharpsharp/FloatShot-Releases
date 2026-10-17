@@ -2,11 +2,21 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.8.8**
+**Latest stable release: v0.8.9**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.8.8/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.8.9/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.8.9
+
+- **Faster Capture History:** gallery previews decode lightweight thumbnails rather than 150 full-resolution screenshots at once. **Ctrl+F** focuses filename search.
+- **Pin from History:** each saved screenshot has a Pin action. Pinned windows now display the complete original image instead of a square crop, and unpinning respects the floating shelf's size limits.
+- **Correct multi-monitor capture:** Fullscreen captures the complete monitor under your pointer rather than an unnecessarily stitched virtual desktop. Turning off **Use the monitor where my cursor is** in Quick Access places cards on the primary monitor.
+- **Reliable JPEG rename:** JPEG captures retain their JPEG extension rather than incorrectly becoming .png files.
+- **Capture recovery:** transient clipboard contention is logged without preventing the capture from opening in the editor or being saved.
+- **More regression coverage:** the Windows test checks thumbnail sizes (160–420px), stack gaps, middle-card reflow, thumbnail decoding, JPEG rename, pinned-window placement and original-image use.
+- **Tidier History layout and documentation:** a compact three-column gallery on standard-sized Windows screens, and instructions that match the current tray gestures.
 
 ## What's new in v0.8.8
 
@@ -47,7 +57,7 @@ For floating captures:
 
 When the shelf is full for the current screen and thumbnail size, the oldest card is automatically saved and retired to make room. You can use **Settings → Quick Access** to choose a smaller size or tighter spacing.
 
-**Settings → About → View FloatShot release information** opens this page for feature descriptions, build verification and help.
+**Capture History** shows your saved screenshots with lighter previews, Open, Copy, Edit, Pin and Delete. Press **Ctrl+F** to search filenames. **Settings → About → View FloatShot release information** opens this page for feature descriptions, build verification and help.
 
 ## How updates work
 
@@ -57,15 +67,15 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.8.8 public release passed the full Windows pipeline:
+The v0.8.9 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
-- **Screenshot regression:** three floating cards were created; after the middle one was dismissed, the other two remained visible.
+- **Screenshot regressions:** three floating cards were created, independent middle-card dismissal and shelf reflow were verified, adjustable size/gap settings were exercised, and pinned full-image rendering was checked.
 - Inno Setup EXE compilation, silent Windows installation, executable/marker/Start-menu verification and Windows uninstall registration checks.
 - Version validation, ZIP integrity, and SHA-256 update-manifest checks.
 
-[**View the successful v0.8.8 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39000539712) (private source repository; requires authorized access).
+[**View the successful v0.8.9 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39001510754) (private source repository; requires authorized access).
 
 Automated tests don't replace visual testing on every monitor or third-party app. Capture behavior with protected or hardware-accelerated windows can vary due to Windows limitations.
 
