@@ -2,11 +2,23 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.11.0**
+**Latest stable release: v0.11.1**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.11.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.11.1/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.11.1
+
+**Editor selection, resize and deletion repair, with a slimmer annotation inspector**
+
+- **Fixed object manipulation:** Completing a circle, redaction or other annotation automatically switches to Select. Clicking an existing annotation selects it, even if a drawing tool was previously active, instead of drawing another shape.
+- **Move and resize:** Drag inside an annotation to move it; drag a corner or edge handle to resize the existing object. Screenshot pixels and export resolution remain unchanged.
+- **Delete selection:** A dedicated **⌫ Delete** toolbar action and the **Delete** or **Backspace** keys remove the selected annotation. Undo restores it.
+- **Compact controls:** Small color swatches, custom color picker, narrow stroke-width inspector, and contextual font controls replace the large styling row.
+- **Stronger Windows regression tests:** A real pointer-operation state machine check covers drawing, reselecting, dragging, resizing, toolbar deletion, Backspace, Undo and redaction repositioning. Existing screenshot export, recorder, OCR, scrolling, WPF, installer and update-integrity tests remain in the Windows build pipeline.
+
+The Windows CI suite passed. Please also test the mouse gestures on your device; CI does not replicate every DPI configuration or input driver.
 
 ## What's new in v0.11.0
 
@@ -119,7 +131,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.10.0 public release passed the full Windows pipeline:
+The v0.11.1 public release passed the full Windows pipeline:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
@@ -127,7 +139,7 @@ The v0.10.0 public release passed the full Windows pipeline:
 - Inno Setup EXE compilation, silent Windows installation, executable/marker/Start-menu verification and Windows uninstall registration checks.
 - Version validation, ZIP integrity, and SHA-256 update-manifest checks.
 
-[**View the successful v0.10.0 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39005568728) (private source repository; requires authorized access).
+[**View the successful v0.11.1 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39008465680) (private source repository; requires authorized access).
 
 Automated tests don't replace visual testing on every monitor or third-party app. Capture behavior with protected or hardware-accelerated windows can vary due to Windows limitations.
 
@@ -140,6 +152,6 @@ If you selected **Hide FloatShot Tray Icon**, reopen FloatShot from Windows Star
 
 If Windows still shows an old taskbar icon after the new version is installed, unpin the old shortcut and pin FloatShot again from the Start menu. Windows may cache pinned shortcut icons.
 
-FloatShot does not currently support cloud upload, scrolling capture, OCR or screen recording. Those items are unavailable until the relevant features are implemented.
+FloatShot does not currently include cloud upload, video recording with microphone/system audio, or cropped-region MP4 recording. v0.11.0 introduced local English OCR, conservative scrolling screenshots and silent whole-monitor MP4 capture; these features depend on Windows and target-app support.
 
 **Installation note:** This setup EXE is not yet code signed. Windows SmartScreen may show an *Unknown publisher* warning; download only from this official repository.
