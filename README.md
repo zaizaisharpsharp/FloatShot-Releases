@@ -5,26 +5,27 @@
 Supports **Windows 10 (build 19041+) and Windows 11, x64**. Install using the standalone `FloatShot-Setup.exe`: no .NET SDK or ZIP extraction is needed.
 
 <!-- FLOATSHOT:RELEASE-START -->
-## Latest stable release: v0.14.1
+## Latest stable release: v0.14.2
 
-[**Download FloatShot for Windows (.exe)**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.14.1/FloatShot-Setup.exe) · [Portable ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.14.1/FloatShot-win-x64.zip) · [Release details](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.1) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot for Windows (.exe)**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.14.2/FloatShot-Setup.exe) · [Portable ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.14.2/FloatShot-win-x64.zip) · [Release details](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.2) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
-### What's new in v0.14.1
+### What's new in v0.14.2
 
-Desktop icon controls and configurable tray gestures, with the original default restored.
+Clearer dark-taskbar icon, sleeker tray gestures and more natural annotation editing.
 
-- Replaced the tray-icon hiding menu command with Hide/Show Desktop Icons. The menu label reflects Windows Explorer's current desktop-icon state.
-- The tray menu and Settings now toggle actual desktop icon visibility without hiding FloatShot or deleting or rearranging desktop shortcuts.
-- Restored the original tray behavior: left-click captures an area and right-click opens the menu. Reverse both gestures in Settings with an immediate, persistent switch.
-- Added an opt-in live desktop-visibility round-trip test with state restoration, plus protection for the minimal open-center selection reticle. Existing capture, editing, recording, branding and secure updates remain intact.
+- Made the existing FloatShot symbol visible on dark Windows taskbars using the approved light mark. The original logo, installer icon and Start/Search branding remain unchanged.
+- Replaced the oversized tray gesture controls with two compact, synchronized dropdowns for left-click and right-click actions. Selections take effect immediately and are saved.
+- Numbered Step now stays active after each click, placing 1, 2, 3 and onward without returning to the toolbar.
+- Drawing tools display distinct cursors for their shapes. Selected annotations show a small on-canvas Delete X; Undo restores deleted objects.
+- Expanded Windows interaction and visual regression tests while preserving native-pixel PNG quality, recording, recovery, updates and installed user data.
 
 ### Recent releases
 
-- [v0.14.1](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.1) (latest)
+- [v0.14.2](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.2) (latest)
+- [v0.14.1](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.1)
 - [v0.14.0](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.0)
 - [v0.13.0](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.13.0)
 - [v0.12.11](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.12.11)
-- [v0.12.10](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.12.10)
 
 <!-- FLOATSHOT:RELEASE-END -->
 
