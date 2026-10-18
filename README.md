@@ -2,11 +2,28 @@
 
 A clean, lightweight screenshot utility for Windows 10 and 11 with a floating screenshot shelf, annotation tools and an in-app updater.
 
-**Latest stable release: v0.12.5**
+**Latest stable release: v0.13.0**
 
-[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.12.5/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot-Setup.exe**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.13.0/FloatShot-Setup.exe) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
 Download the single Windows EXE and double-click to install. No ZIP extraction or .NET SDK is needed. FloatShot creates a Start menu shortcut and an entry in Windows **Settings → Installed apps**. Existing users can continue updating directly in the app.
+
+## What's new in v0.13.0
+
+**A premium FloatShot refresh with a more compact interface, improved performance and a significantly smaller application.**
+
+- **Redesigned screenshot editor:** Cleaner image canvas, contextual annotation inspector, improved tool controls and editable numbered callouts.
+- **Modern Updates window:** Compact adaptive design, download progress, scrolling release highlights and always-visible **Not now** and **Download Update / Restart & Install** actions.
+- **System, Light and Dark appearance modes:** More consistent native Windows styling, compact sidebar-based Settings navigation, polished dialogs and coherent vector action icons.
+- **Better capture and recording experience:** Refined floating screenshot/video cards, in-app MP4 playback, improved selection controls and recording countdown.
+- **Smaller install footprint:** Bundled FFmpeg slimmed down and the self-contained .NET executable compressed; measured application payload reduced from roughly **356 MiB to 182 MiB**.
+- **Performance and reliability:** Improved History thumbnail handling and floating-preview memory usage; retained original-pixel screenshots, recording recovery and editing/export behavior.
+- **Windows integration protected:** Official FloatShot branding, tray/taskbar/Start/Search icons, SHA-256-verified staged updates and rollback remain supported.
+- **Safe upgrades:** Windows installer, updater and uninstall tests verified preservation of personal screenshots, recordings, settings and recoverable video drafts.
+
+**Verification:** Windows build and application checks, UI rendering, installer/uninstall, staged updater, ZIP integrity and rollback tests passed. UI/input behavior on every individual machine and display configuration still benefits from local testing.
+
+[**FloatShot v0.13.0 release notes and verified downloads**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.13.0)
 
 ## What's new in v0.12.5
 
@@ -237,7 +254,7 @@ For a clean reinstall or when the in-app updater is inaccessible, use **FloatSho
 
 ## Build verification
 
-The v0.12.5 public release passed the full Windows pipeline:
+The v0.13.0 public release passed the Windows build and integration pipeline, including:
 
 - Self-contained .NET 8 x64 WPF compilation and creation of the branded Windows icons.
 - Real Windows window creation and tray-menu dispatch checks, including **left-click Capture Area**, **right-click menu toggle**, **outside-click dismissal**, **hidden tray icon restoration**, Settings, About, Capture History, window selection and monitor/window capture dimension tests.
@@ -245,7 +262,7 @@ The v0.12.5 public release passed the full Windows pipeline:
 - Inno Setup EXE compilation, silent Windows installation, executable/marker/Start-menu verification and Windows uninstall registration checks.
 - Version validation, ZIP integrity, and SHA-256 update-manifest checks.
 
-[**View the successful v0.11.1 Windows build**](https://github.com/zaizaisharpsharp/FloatShot-Windows/actions/runs/39008465680) (private source repository; requires authorized access).
+[**View the v0.13.0 release and downloadable artifacts**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.13.0).
 
 Automated tests don't replace visual testing on every monitor or third-party app. Capture behavior with protected or hardware-accelerated windows can vary due to Windows limitations.
 
@@ -258,6 +275,6 @@ If you selected **Hide FloatShot Tray Icon**, reopen FloatShot from Windows Star
 
 If Windows still shows an old taskbar icon after the new version is installed, unpin the old shortcut and pin FloatShot again from the Start menu. Windows may cache pinned shortcut icons.
 
-FloatShot does not currently include cloud upload or video recording with microphone/system audio. v0.12.0 supports silent cropped-region MP4 recording, local English OCR, and manual/automatic scrolling screenshots; supported behavior depends on Windows and target-app capabilities.
+FloatShot does not currently include cloud upload or video recording with microphone/system audio. v0.13.0 supports cropped-region MP4 recording, in-app video preview, local English OCR, and manual/automatic scrolling screenshots; recording audio is not yet available. Supported behavior depends on Windows and target-app capabilities.
 
 **Installation note:** This setup EXE is not yet code signed. Windows SmartScreen may show an *Unknown publisher* warning; download only from this official repository.
