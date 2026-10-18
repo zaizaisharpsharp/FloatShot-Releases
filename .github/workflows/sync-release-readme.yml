@@ -1,0 +1,47 @@
+name: Keep public README in sync with releases
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-release-readme.yml'
+      - '.github/scripts/sync_release_readme.py'
+      - '.github/scripts/test_sync_release_readme.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: floatshot-release-readme
+  cancel-in-progress: false
+
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out public repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Test release README generator
+        run: python -m unittest discover -s .github/scripts -p 'test_*.py' -v
+      - name: Synchronize latest published release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python .github/scripts/sync_release_readme.py
+      - name: Commit the README only when changed
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README already matches the latest verified public release."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs(releases): sync latest published FloatShot release"
+          git push origin HEAD:main
