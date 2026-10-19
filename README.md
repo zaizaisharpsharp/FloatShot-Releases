@@ -5,27 +5,34 @@
 Supports **Windows 10 (build 19041+) and Windows 11, x64**. Install using the standalone `FloatShot-Setup.exe`: no .NET SDK or ZIP extraction is needed.
 
 <!-- FLOATSHOT:RELEASE-START -->
-## Latest stable release: v0.14.2
+## Latest stable release: v0.15.0
 
-[**Download FloatShot for Windows (.exe)**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.14.2/FloatShot-Setup.exe) · [Portable ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.14.2/FloatShot-win-x64.zip) · [Release details](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.2) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
+[**Download FloatShot for Windows (.exe)**](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.15.0/FloatShot-Setup.exe) · [Portable ZIP](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/download/v0.15.0/FloatShot-win-x64.zip) · [Release details](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.15.0) · [All releases](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases)
 
-### What's new in v0.14.2
+### What's new in v0.15.0
 
-Clearer dark-taskbar icon, sleeker tray gestures and more natural annotation editing.
+A more compact FloatShot: focused capture controls, near-square previews, and faster file tools.
 
-- Made the existing FloatShot symbol visible on dark Windows taskbars using the approved light mark. The original logo, installer icon and Start/Search branding remain unchanged.
-- Replaced the oversized tray gesture controls with two compact, synchronized dropdowns for left-click and right-click actions. Selections take effect immediately and are saved.
-- Numbered Step now stays active after each click, placing 1, 2, 3 and onward without returning to the toolbar.
-- Drawing tools display distinct cursors for their shapes. Selected annotations show a small on-canvas Delete X; Undo restores deleted objects.
-- Expanded Windows interaction and visual regression tests while preserving native-pixel PNG quality, recording, recovery, updates and installed user data.
+- Near-square floating image and PDF cards keep the preview uncluttered. Edit stays at the lower left; PNG/JPG/PDF and folder actions are in the compact format rail. Native file drag preserves the original.
+- FloatWheel provides contextual conversion and file actions in a dedicated wheel. Global Shift-drag activation is not yet supported.
+- A slimmer capture dock provides Area, Screen, Window and Record; More exposes Scrolling, Timer and OCR in the same row. The strip stays outside the selected region where space allows.
+- Quick Files brings Smart Open, Convert, Drop Shelf, PDF Workspace, Combine PDF and Fit to Upload Limit together with fewer clicks.
+- Quick Crop and Add Background use narrower tools with precise crop handles, aspect ratios, live padding, colors, corners and shadow controls.
+- PDF Workspace can preview, duplicate, reorder, rotate, extract, split and merge pages. PDF fitting verifies byte limits; opt-in scanned flattening removes selectable text and other features.
+- Video tools include pause/stop recording, compact playback controls and draft recovery. Recent Captures and output cards use smaller, clearer actions.
+- First launch brings the FloatShot menu into view. Settings, Update screens and dark-taskbar window icons have been refined; installer and updater retain their integrity and rollback tests.
+
+Built and tested on Windows; updater ZIP SHA-256 verified.
+
+**Windows security notice:** This release is not code-signed. Microsoft Defender SmartScreen or Smart App Control may warn or block installation. Verify that you downloaded from the official FloatShot-Releases page; do not disable system protection to install it.
 
 ### Recent releases
 
-- [v0.14.2](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.2) (latest)
+- [v0.15.0](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.15.0) (latest)
+- [v0.14.2](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.2)
 - [v0.14.1](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.1)
 - [v0.14.0](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.14.0)
 - [v0.13.0](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.13.0)
-- [v0.12.11](https://github.com/zaizaisharpsharp/FloatShot-Releases/releases/tag/v0.12.11)
 
 <!-- FLOATSHOT:RELEASE-END -->
 
